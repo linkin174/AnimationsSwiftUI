@@ -11,6 +11,7 @@
 		70A269A12843DE5A00613741 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A269A02843DE5A00613741 /* ContentView.swift */; };
 		70A269A32843DE5C00613741 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A269A22843DE5C00613741 /* Assets.xcassets */; };
 		70A269A62843DE5C00613741 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A269A52843DE5C00613741 /* Preview Assets.xcassets */; };
+		70A269AD28451AC100613741 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A269AC28451AC100613741 /* SwiftView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		70A269A02843DE5A00613741 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		70A269A22843DE5C00613741 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70A269A52843DE5C00613741 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70A269AC28451AC100613741 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				70A2699E2843DE5A00613741 /* AnimationsSwiftUIApp.swift */,
 				70A269A02843DE5A00613741 /* ContentView.swift */,
+				70A269AC28451AC100613741 /* SwiftView.swift */,
 				70A269A22843DE5C00613741 /* Assets.xcassets */,
 				70A269A42843DE5C00613741 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A269AD28451AC100613741 /* SwiftView.swift in Sources */,
 				70A269A12843DE5A00613741 /* ContentView.swift in Sources */,
 				70A2699F2843DE5A00613741 /* AnimationsSwiftUIApp.swift in Sources */,
 			);
