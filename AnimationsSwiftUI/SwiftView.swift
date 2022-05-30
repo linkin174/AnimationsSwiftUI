@@ -34,8 +34,8 @@ struct SwiftView: Shape {
         path.addQuadCurve(to: CGPoint(x: rect.maxX * 0.025, y: rect.maxY * 0.625),
                           control: CGPoint(x: rect.maxX * 0.35, y: rect.maxY * 0.82))
         path.addCurve(to: startPoint,
-                      control1: CGPoint(x: rect.maxX * 0.58, y: rect.maxY * 1.26),
-                      control2: CGPoint(x: rect.maxX * 0.79, y: rect.maxY * 0.63))
+                      control1: CGPoint(x: rect.maxX * 0.63, y: rect.maxY * 1.28),
+                      control2: CGPoint(x: rect.maxX * 0.76, y: rect.maxY * 0.61))
         return path
     }
     
@@ -56,6 +56,7 @@ struct SwiftView: Shape {
 struct SwiftView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftView()
+            .background(Image("swift").resizable())
             .frame(width: 200, height: 200)
     }
 }
