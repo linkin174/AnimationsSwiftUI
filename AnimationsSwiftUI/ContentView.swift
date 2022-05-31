@@ -56,7 +56,7 @@ struct ContentView: View {
                 duration += 0.5
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.6)) {
+                    withAnimation(Animation.spring(response: 0.9, dampingFraction: 0.6)) {
                         toggleAnimation[1] = true
                         duration += 0.5
                     }
