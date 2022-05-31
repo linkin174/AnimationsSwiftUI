@@ -51,12 +51,12 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            withAnimation(Animation.spring().delay(0.5)) {
+            withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.7).delay(0.5)) {
                 toggleAnimation[0].toggle()
                 duration += 0.5
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    withAnimation(Animation.spring()) {
+                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.6)) {
                         toggleAnimation[1] = true
                         duration += 0.5
                     }
