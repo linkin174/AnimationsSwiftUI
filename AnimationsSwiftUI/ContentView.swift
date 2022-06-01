@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var toggleAnimation = [false, false, false, false]
-    @State private var duration: Double = 0.5
     @State private var isSelfDissmissed = false
 
     private let bounds = UIScreen.main.bounds
@@ -53,25 +52,17 @@ struct ContentView: View {
         .onAppear {
             withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.7).delay(0.5)) {
                 toggleAnimation[0].toggle()
-                duration += 0.5
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    withAnimation(Animation.spring(response: 0.9, dampingFraction: 0.6)) {
-                        toggleAnimation[1] = true
-                        duration += 0.5
-                    }
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    withAnimation(.easeInOut(duration: duration)) {
-                        toggleAnimation[2] = true
-                        duration += 0.5
-                    }
+                withAnimation(Animation.spring(response: 0.9, dampingFraction: 0.6).delay(1)) {
+                    toggleAnimation[1] = true
                 }
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    withAnimation(.easeInOut(duration: duration).delay(duration / 2)) {
-                        toggleAnimation[3] = true
-                    }
+                withAnimation(.easeInOut(duration: 0.5).delay(1.5)) {
+                    toggleAnimation[2] = true
+                }
+
+                withAnimation(.easeInOut(duration: 1).delay(2)) {
+                    toggleAnimation[3] = true
                 }
             }
         }
