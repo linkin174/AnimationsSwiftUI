@@ -27,7 +27,7 @@ struct ShimmeringText: View {
                         .offset(x: -bounds.midX)
                         .offset(x: isAnimating ? bounds.maxX * 2 : 0)
                 }
-                .blendMode(.difference)
+                .blendMode(.softLight)
         }
         .onAppear {
             withAnimation(Animation.linear(duration: 2.5)
