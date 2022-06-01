@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var rectParamteres: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var birdParameters: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var delay: Double = 0.5
-    @State private var degrees: Double = 0
     @Environment(\.dismiss) var dismiss
 
     private let bounds = UIScreen.main.bounds
@@ -26,7 +25,6 @@ struct ContentView: View {
                         .shadow(color: .gray, radius: 3, x: 5, y: 5)
                         .scaleEffect(rectParamteres.scale)
                         .opacity(rectParamteres.opacity)
-                        .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
                     SwiftView()
                         .foregroundColor(.white)
                         .frame(width: 200, height: 200)
