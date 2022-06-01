@@ -10,6 +10,9 @@ import SwiftUI
 struct StartView: View {
     @State private var isAnimating = false
     @State private var isPressed = false
+    let heartBeat = Animation
+        .easeInOut(duration: 0.8)
+        .repeatForever(autoreverses: true)
 
     private let bounds = UIScreen.main.bounds
     var body: some View {
@@ -17,7 +20,7 @@ struct StartView: View {
             Color.gray.opacity(0.3).ignoresSafeArea()
             Button(action: { isPressed.toggle() }) {
                 ShimmeringText(textColor: .white.opacity(0.8),
-                               shimColor: .white.opacity(0.8),
+                               shimColor: .white,
                                text: "Let's Go!").font(.title.bold())
             }
             .padding(12)
@@ -29,7 +32,7 @@ struct StartView: View {
                 ContentView()
             })
             .onAppear {
-                withAnimation(Animation.linear(duration: 0.9).repeatForever(autoreverses: true)) {
+                withAnimation(heartBeat) {
                     isAnimating.toggle()
                 }
             }

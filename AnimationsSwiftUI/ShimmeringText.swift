@@ -27,6 +27,7 @@ struct ShimmeringText: View {
                         .offset(x: -bounds.midX)
                         .offset(x: isAnimating ? bounds.maxX * 2 : 0)
                 }
+                .blendMode(.difference)
         }
         .onAppear {
             withAnimation(Animation.linear(duration: 2.5)
@@ -39,6 +40,6 @@ struct ShimmeringText: View {
 
 struct ShimmeringText_Previews: PreviewProvider {
     static var previews: some View {
-        ShimmeringText(textColor: .blue, shimColor: .red, text: "GO FORWARD!")
+        ShimmeringText(textColor: .gray, shimColor: .white, text: "GO FORWARD!")
     }
 }
