@@ -13,21 +13,24 @@ struct ContentView: View {
     @State private var birdParameters: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var delay: Double = 0.5
     @Environment(\.dismiss) var dismiss
+    @State private var degrees: Double = 0
 
     private let bounds = UIScreen.main.bounds
     var body: some View {
   
             VStack(spacing: 24) {
+                Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: 48)
                         .foregroundColor(.red)
-                        .frame(width: 250, height: 250)
+                        .frame(width: bounds.width * 0.8, height: bounds.width * 0.8)
                         .shadow(color: .gray, radius: 3, x: 5, y: 5)
                         .scaleEffect(rectParamteres.scale)
                         .opacity(rectParamteres.opacity)
+                        .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: -1, z: 0))
                     SwiftView()
                         .foregroundColor(.white)
-                        .frame(width: 200, height: 200)
+                        .frame(width: bounds.width * 0.65, height: bounds.width * 0.65)
                         .opacity(birdParameters.opacity)
                         .scaleEffect(birdParameters.scale)
                         .onTapGesture {
@@ -60,6 +63,16 @@ struct ContentView: View {
                     birdParameters.opacity = 1
                     birdParameters.scale = 1
                     delay += 0.5
+                }
+                
+                withAnimation(.easeIn(duration: 0.2).delay(1.7)) {
+                    degrees += 10
+                    rectParamteres.scale = 0.85
+                }
+                
+                withAnimation(.linear(duration: 0.2).delay(1.9)) {
+                    degrees = 0
+                    rectParamteres.scale = 1
                 }
 
                 withAnimation(.easeInOut(duration: 0.5).delay(delay)) {
