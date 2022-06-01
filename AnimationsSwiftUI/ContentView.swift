@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var birdParameters: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var delay: Double = 0.5
     @State private var degrees: Double = 0
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
 
     private let bounds = UIScreen.main.bounds
     var body: some View {
@@ -33,7 +33,7 @@ struct ContentView: View {
                         .opacity(birdParameters.opacity)
                         .scaleEffect(birdParameters.scale)
                         .onTapGesture {
-                            presentationMode.wrappedValue.dismiss()
+                            dismiss()
                         }
                 }
                 HStack {
