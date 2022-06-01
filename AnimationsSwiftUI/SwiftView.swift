@@ -43,7 +43,6 @@ struct SwiftView: Shape {
 struct SwiftView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftView()
-//            .background(Image("swift").resizable())
             .frame(width: 200, height: 200)
     }
 }

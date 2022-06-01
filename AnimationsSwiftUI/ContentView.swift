@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var textAnimating: (greet: Bool, swift: Bool) = (false, false)
-    @State private var isSelfDissmissed = false
     @State private var rectParamteres: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var birdParameters: (opacity: Double, scale: Double) = (0, 5.0)
     @State private var delay: Double = 0.5
+    @State private var isSelfDissmissed = false
 
     private let bounds = UIScreen.main.bounds
 

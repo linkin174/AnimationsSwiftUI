@@ -18,8 +18,7 @@ struct StartView: View {
             Button(action: { isPressed.toggle() }) {
                 ShimmeringText(textColor: .white.opacity(0.8),
                                shimColor: .white.opacity(0.8),
-                               text: "Let's Go!")
-                    .font(.title.bold())
+                               text: "Let's Go!").font(.title.bold())
             }
             .padding(12)
             .background(.blue)
